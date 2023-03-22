@@ -63,7 +63,7 @@ header{
 .header-content{
     display: grid;
     grid-template-columns: minmax(25rem, 1fr) 1.5fr minmax(25rem, 1fr);
-    width: 95vw;
+    width: 90vw;
     gap: 1rem;
     align-items: flex-end;
     justify-content: center;
@@ -130,12 +130,41 @@ nav li{
 }
 
 
-@media(max-width: 1000px){
+main{
+    width: min(90vw, 70rem);
+    margin-inline: auto;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 6rem;
+    padding-inline: 2rem;
+}
+
+section > *{
+    flex-basis: 100%;
+}
+
+section:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+section h3{
+    font-size: clamp(1.2rem, 2rem, 3.5rem);
+    font-weight: bolder;
+    margin-bottom: 1rem;
+}
+
+
+@media(max-width: 900px){
     .hide{
         display: none;
     }
     .f-column{
-        flex-direction: column;
+        flex-direction: column !important;
     }
     .header-content{
         grid-template-columns: 1fr 1fr;
