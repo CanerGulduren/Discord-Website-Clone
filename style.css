@@ -20,7 +20,7 @@ body{
 }
 
 :root{
-    --primary-color: #4030cd;
+    --primary-color: #4a3bd0;
     --secondary-color: #333;
     --light-txt-color: #f8f8f8;
 
@@ -35,16 +35,31 @@ img{
 }
 
 h1,
-h2{
+h2,
+h3{
+    font-weight: bolder;
+}
+
+h1{
     font-family: var(--header-font-family);
     font-size: clamp(2rem, 3.5vw, 4.5rem);
-    font-weight: bolder;
 }
 
 span,
 p{
     font-size: clamp(.8rem, 1.2em, 1.5em);
     line-height: 1.8;
+}
+
+button{
+    width: 18rem;
+    height: 3rem;
+    font-size: clamp(.5rem, 1em, 1.2em);
+    border-radius: 2rem;
+    border: none;
+    -webkit-box-shadow: 0px 2px 10px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 10px -3px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 10px -3px rgba(0,0,0,0.75);
 }
 
 header a{
@@ -58,6 +73,7 @@ header{
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--light-txt-color);
+    margin-bottom: 10rem;
 }
 
 .header-content{
@@ -87,17 +103,6 @@ header{
     justify-content: center;
 }
 
-.header-buttons button{
-    width: 18rem;
-    height: 3rem;
-    font-size: clamp(.5rem, 1em, 1.2em);
-    border-radius: 2rem;
-    border: none;
-    -webkit-box-shadow: 0px 2px 10px -3px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 2px 10px -3px rgba(0,0,0,0.75);
-    box-shadow: 0px 2px 10px -3px rgba(0,0,0,0.75);
-}
-
 .header-buttons button:last-child{
     color: #fff;
     background-color: var(--secondary-color)
@@ -117,6 +122,7 @@ nav .logo{
 nav button{
     font-size: .8rem;
     height: 2rem;
+    width: 10rem;
     padding-inline: .5rem;
     border-radius: 2rem;
 }
@@ -131,17 +137,28 @@ nav li{
 
 
 main{
-    width: min(90vw, 70rem);
+    width: min(95vw, 80rem);
     margin-inline: auto;
 }
+
+section,
+aside{
+    margin-bottom: 10rem;
+    padding-inline: 2rem;
+}
+
+section h3,
+aside picture{
+    margin-bottom: 1.5rem;
+}
+
 
 section{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    margin-top: 6rem;
-    padding-inline: 2rem;
+
 }
 
 section > *{
@@ -152,11 +169,40 @@ section:nth-child(even){
     flex-direction: row-reverse;
 }
 
+
 section h3{
-    font-size: clamp(1.2rem, 2rem, 3.5rem);
-    font-weight: bolder;
-    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 2vw, 3.5rem);
 }
+
+aside{
+    margin-top: 15rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+aside h2{
+    font-size: clamp(2.2rem, 4vw, 4rem);
+}
+
+aside h4{
+    font-size: clamp(1.6rem, 2vw, 2.5rem);
+}
+
+aside button{
+    background-color: var(--primary-color);
+    color: var(--light-txt-color);
+}
+
+.aside-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
 
 
 @media(max-width: 900px){
@@ -185,5 +231,9 @@ section h3{
     .header-content{
         display: flex;
         flex-direction: column;
+    }
+    aside{
+        margin-top: 5rem;
+        text-align: left;
     }
 }
