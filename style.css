@@ -147,15 +147,15 @@ nav li{
 .menu{
     height: 100vh;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 10px 0 0 10px;
     padding: 1rem;
-    display: flex;
+    display: none;
     flex-direction: column;
+    justify-content: space-between;
     position: fixed;
     right: 0;
     top: 0;
     z-index: 3;
-    display: none;
 }
 
 .menu > *{
@@ -164,19 +164,14 @@ nav li{
 
 .menu div{
     justify-content: space-between;
+    align-items: center;
 }
 
 .menu a{
     display: block;
     color: var(--secondary-color);
-    margin-top: 2rem;
-    padding-block: .2rem;
+    padding-block: 1rem;
 }
-
-.menu button{
-    margin-top: 48vh;
-}
-
 
 main{
     width: min(95vw, 80rem);
@@ -337,4 +332,17 @@ footer h6{
     .footer-links{
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+.hidden-elem{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(50px);
+    transition: .5s all ease;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(-50px);
 }
