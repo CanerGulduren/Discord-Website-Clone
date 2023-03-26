@@ -5,7 +5,6 @@
 *::before,
 *::after,
 body{
-
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
@@ -47,7 +46,7 @@ h1{
 
 span,
 p{
-    font-size: clamp(.8rem, 1.2em, 1.5em);
+    font-size: clamp(.8rem, 1em, 1.5em);
     line-height: 1.8;
 }
 
@@ -127,12 +126,55 @@ nav button{
     border-radius: 2rem;
 }
 
-nav ul{
+.links,
+.menu div{
     display: flex;
 }
 
 nav li{
     padding-inline: .5rem;
+}
+
+.nav-buttons{
+    display: flex;
+    gap: 1rem;
+}
+
+.menu-icon{
+    display: none;
+}
+
+.menu{
+    height: 100vh;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 3;
+    display: none;
+}
+
+.menu > *{
+    padding: 1rem;
+}
+
+.menu div{
+    justify-content: space-between;
+}
+
+.menu a{
+    display: block;
+    color: var(--secondary-color);
+    margin-top: 2rem;
+    padding-block: .2rem;
+}
+
+.menu button{
+    margin-top: 48vh;
 }
 
 
@@ -193,7 +235,8 @@ aside h4{
     font-size: clamp(1.6rem, 2vw, 2.5rem);
 }
 
-aside button{
+aside button,
+.menu button{
     background-color: var(--primary-color);
     color: var(--light-txt-color);
 }
@@ -238,7 +281,7 @@ footer h6{
     flex-direction: column;
 }
 
-.social-links img{
+.icon{
     width: 2rem;
     height: 2rem;
 }
@@ -260,6 +303,9 @@ footer h6{
 @media(max-width: 900px){
     .hide{
         display: none;
+    }
+    .menu-icon{
+        display: block;
     }
     .f-column{
         flex-direction: column !important;
